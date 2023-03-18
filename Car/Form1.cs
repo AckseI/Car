@@ -7,20 +7,6 @@ namespace Car
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         public static Car[] cars = new Car[0];
         private void button1_Click(object sender, EventArgs e)
         {
@@ -36,6 +22,24 @@ namespace Car
             cars[cars.Length - 1] = car;
 
             dataGridView1.Rows.Add(car.maxSpeed, car.weight, car.isDamage, car.color, car.sits);
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) | e.KeyChar == '\b') return;
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) | e.KeyChar == '\b' | e.KeyChar == Convert.ToChar(",")) return;
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }
