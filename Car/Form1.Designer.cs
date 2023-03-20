@@ -40,11 +40,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maxSpeed = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.weight = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isDamage = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.color = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sits = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -68,7 +68,6 @@
             this.label1.Size = new System.Drawing.Size(92, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "Макс. скорость";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -85,7 +84,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 23);
             this.textBox1.TabIndex = 3;
-            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // textBox2
@@ -104,7 +102,6 @@
             this.label3.Size = new System.Drawing.Size(78, 15);
             this.label3.TabIndex = 4;
             this.label3.Text = "Вес машины";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // textBox3
             // 
@@ -129,7 +126,6 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 23);
             this.textBox4.TabIndex = 7;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label5
             // 
@@ -152,43 +148,44 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5});
+            this.maxSpeed,
+            this.weight,
+            this.isDamage,
+            this.color,
+            this.sits});
             this.dataGridView1.Location = new System.Drawing.Point(233, 69);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(543, 150);
             this.dataGridView1.TabIndex = 11;
             // 
-            // Column1
+            // maxSpeed
             // 
-            this.Column1.HeaderText = "Макс. скорость";
-            this.Column1.Name = "Column1";
+            this.maxSpeed.HeaderText = "Макс. скорость";
+            this.maxSpeed.Name = "maxSpeed";
             // 
-            // Column2
+            // weight
             // 
-            this.Column2.HeaderText = "Вес машины";
-            this.Column2.Name = "Column2";
+            this.weight.HeaderText = "Вес машины";
+            this.weight.Name = "weight";
             // 
-            // Column3
+            // isDamage
             // 
-            this.Column3.HeaderText = "Повреждена ?";
-            this.Column3.Name = "Column3";
+            this.isDamage.HeaderText = "Повреждена ?";
+            this.isDamage.Name = "isDamage";
             // 
-            // Column4
+            // color
             // 
-            this.Column4.HeaderText = "Цвет машины";
-            this.Column4.Name = "Column4";
+            this.color.HeaderText = "Цвет машины";
+            this.color.Name = "color";
             // 
-            // Column5
+            // sits
             // 
-            this.Column5.HeaderText = "Кол-во мест";
-            this.Column5.Name = "Column5";
+            this.sits.HeaderText = "Кол-во мест";
+            this.sits.Name = "sits";
             // 
             // button2
             // 
@@ -208,6 +205,7 @@
             this.button3.TabIndex = 13;
             this.button3.Text = "Обновить";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1
             // 
@@ -250,12 +248,12 @@
         private Label label5;
         private Button button1;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewCheckBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
         private Button button2;
         private Button button3;
+        private DataGridViewTextBoxColumn maxSpeed;
+        private DataGridViewTextBoxColumn weight;
+        private DataGridViewCheckBoxColumn isDamage;
+        private DataGridViewTextBoxColumn color;
+        private DataGridViewTextBoxColumn sits;
     }
 }
