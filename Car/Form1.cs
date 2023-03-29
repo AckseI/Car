@@ -114,5 +114,36 @@ namespace Car
 
             }
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            int j;
+            int step = cars.Length / 2;
+            DateTime startTime = DateTime.Now;
+            while (step > 0)
+            {
+                for (int i = 0; i < (cars.Length - step); i++) 
+                {
+                    j = i;
+                    while ((j >= 0) && (cars[j].maxSpeed > cars[j+step].maxSpeed))
+                    {
+                        Car c = new Car();
+                        c = cars[j];
+                        cars[j] = cars[j+step];
+                        cars[j+step] = c;
+                        j -= step;
+                    }
+                }
+                step /= 2;
+            }
+            System.TimeSpan time = startTime - DateTime.Now;
+            label6.Text = time.ToString();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            
+            //Шейкер
+        }
     }
 }
