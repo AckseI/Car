@@ -51,6 +51,8 @@ namespace Car
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -193,7 +195,7 @@ namespace Car
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(269, 7);
+            this.button2.Location = new System.Drawing.Point(310, 7);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(129, 51);
             this.button2.TabIndex = 12;
@@ -203,7 +205,7 @@ namespace Car
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(451, 7);
+            this.button3.Location = new System.Drawing.Point(582, 7);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(129, 51);
             this.button3.TabIndex = 13;
@@ -213,11 +215,11 @@ namespace Car
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(625, 7);
+            this.button4.Location = new System.Drawing.Point(248, 239);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(129, 51);
             this.button4.TabIndex = 14;
-            this.button4.Text = "Отсортировать";
+            this.button4.Text = "Бабл";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -249,11 +251,33 @@ namespace Car
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(431, 239);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(129, 51);
+            this.button6.TabIndex = 18;
+            this.button6.Text = "Метод Шелла";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(618, 239);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(129, 51);
+            this.button7.TabIndex = 19;
+            this.button7.Text = "Патимейкер";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(801, 356);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -305,5 +329,7 @@ namespace Car
         private Label label6;
         private Label label7;
         private Button button5;
+        private Button button6;
+        private Button button7;
     }
 }
