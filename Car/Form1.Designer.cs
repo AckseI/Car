@@ -53,6 +53,7 @@ namespace Car
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.resetButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -226,7 +227,7 @@ namespace Car
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(133, 332);
+            this.label6.Location = new System.Drawing.Point(133, 368);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(15, 15);
             this.label6.TabIndex = 15;
@@ -235,7 +236,7 @@ namespace Car
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(11, 332);
+            this.label7.Location = new System.Drawing.Point(11, 368);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(116, 15);
             this.label7.TabIndex = 16;
@@ -243,7 +244,7 @@ namespace Car
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(11, 278);
+            this.button5.Location = new System.Drawing.Point(11, 314);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(129, 51);
             this.button5.TabIndex = 17;
@@ -271,11 +272,22 @@ namespace Car
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
+            // resetButton
+            // 
+            this.resetButton.Location = new System.Drawing.Point(660, 314);
+            this.resetButton.Name = "resetButton";
+            this.resetButton.Size = new System.Drawing.Size(129, 51);
+            this.resetButton.TabIndex = 20;
+            this.resetButton.Text = "Сброс";
+            this.resetButton.UseVisualStyleBackColor = true;
+            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(801, 356);
+            this.ClientSize = new System.Drawing.Size(801, 386);
+            this.Controls.Add(this.resetButton);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
@@ -331,5 +343,6 @@ namespace Car
         private Button button5;
         private Button button6;
         private Button button7;
+        private Button resetButton;
     }
 }

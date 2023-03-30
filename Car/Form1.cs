@@ -110,8 +110,6 @@ namespace Car
                 cars[i].isDamage = bool.Parse(dataGridView1.Rows[i].Cells["isDamage"].Value.ToString());
                 cars[i].color = dataGridView1.Rows[i].Cells["color"].Value.ToString();
                 cars[i].sits = int.Parse(dataGridView1.Rows[i].Cells["sits"].Value.ToString());
-
-
             }
         }
 
@@ -142,8 +140,54 @@ namespace Car
 
         private void button7_Click(object sender, EventArgs e)
         {
-            
+            int start = 0;
+            int end = cars.Length - 1;
+            bool swapped = true;
+            DateTime startTime = DateTime.Now;
+
+            while (swapped)
+            {
+                swapped = false;
+                for (int i = start; i < end; ++i)
+                {
+                    if (cars[i].maxSpeed > cars[i + 1].maxSpeed)
+                    {
+                        Car temp = new Car();
+                        temp = cars[i];
+                        cars[i] = cars[i + 1];
+                        cars[i + 1] = temp;
+                        swapped = true;
+                    }
+                }
+
+                if (!swapped)
+                    break;
+
+                swapped = false;
+
+                for (int i = end - 1; i >= start; --i)
+                {
+                    if (cars[i].maxSpeed > cars[i + 1].maxSpeed)
+                    {
+                        Car temp = new Car();
+                        temp = cars[i];
+                        cars[i] = cars[i + 1];
+                        cars[i + 1] = temp;
+                        swapped = true;
+                    }
+                }
+
+                ++start;
+            }
+            System.TimeSpan time = startTime - DateTime.Now;
+            label6.Text = time.ToString();
             //Шейкер
+        }
+
+        private void resetButton_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.Rows.Clear();
         }
     }
 }
