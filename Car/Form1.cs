@@ -14,16 +14,16 @@ namespace Car
         {
             Car car = new Car();
             car.maxSpeed = int.Parse(textBox1.Text);
-            car.weight = float.Parse(textBox2.Text);
+            car.weight = int.Parse(textBox2.Text);
             car.isDamage = checkBox1.Checked;
             car.color = textBox4.Text;
-            car.sits = int.Parse(textBox3.Text);
+            car.price = int.Parse(textBox3.Text);
 
             Array.Resize(ref cars, cars.Length + 1);
 
             cars[cars.Length - 1] = car;
 
-            dataGridView1.Rows.Add(car.maxSpeed, car.weight, car.isDamage, car.color, car.sits);
+            dataGridView1.Rows.Add(car.maxSpeed, car.weight, car.isDamage, car.color, car.price);
 
             textBox1.Text = "";
             textBox2.Text = "";
@@ -35,14 +35,14 @@ namespace Car
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsDigit(e.KeyChar) | e.KeyChar == '\b') return;
-            else {e.Handled = true;}
+            else { e.Handled = true; }
         }
 
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsDigit(e.KeyChar) | e.KeyChar == '\b' | e.KeyChar == Convert.ToChar(",")) return;
-            else {e.Handled = true;}
+            else { e.Handled = true; }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -50,10 +50,10 @@ namespace Car
             for (int i = 0; i < dataGridView1.RowCount; i++)
             {
                 cars[i].maxSpeed = int.Parse(dataGridView1.Rows[i].Cells["maxSpeed"].Value.ToString());
-                cars[i].weight = float.Parse(dataGridView1.Rows[i].Cells["weight"].Value.ToString());
+                cars[i].weight = int.Parse(dataGridView1.Rows[i].Cells["weight"].Value.ToString());
                 cars[i].isDamage = bool.Parse(dataGridView1.Rows[i].Cells["isDamage"].Value.ToString());
                 cars[i].color = dataGridView1.Rows[i].Cells["color"].Value.ToString();
-                cars[i].sits = int.Parse(dataGridView1.Rows[i].Cells["sits"].Value.ToString());
+                cars[i].price = int.Parse(dataGridView1.Rows[i].Cells["sits"].Value.ToString());
             }
         }
         private void button3_Click(object sender, EventArgs e)
@@ -64,7 +64,7 @@ namespace Car
                 dataGridView1.Rows[i].Cells["weight"].Value = cars[i].weight;
                 dataGridView1.Rows[i].Cells["isDamage"].Value = cars[i].isDamage;
                 dataGridView1.Rows[i].Cells["color"].Value = cars[i].color;
-                dataGridView1.Rows[i].Cells["sits"].Value = cars[i].sits;
+                dataGridView1.Rows[i].Cells["sits"].Value = cars[i].price;
             }
         }
 
@@ -83,8 +83,8 @@ namespace Car
                     {
                         Car c = new Car();
                         c = cars[i];
-                        cars[i] = cars[i+1];
-                        cars[i+1] = c; isSort = false;
+                        cars[i] = cars[i + 1];
+                        cars[i + 1] = c; isSort = false;
                     }
                 }
             }
@@ -96,20 +96,20 @@ namespace Car
         private void button5_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
-            for (int i = 0; i < 10000; i++)
+            for (int i = 0; i < int.Parse(textBox5.Text); i++)
             {
-                dataGridView1.Rows.Add(rnd.Next(300), 1, true, "jj", 5);
+                dataGridView1.Rows.Add(rnd.Next(300), rnd.Next(10), true, "jj", rnd.Next(10));
             }
             Array.Resize(ref cars, 0);
             for (int i = 0; i < dataGridView1.RowCount; i++)
             {
-                Array.Resize(ref cars, cars.Length+1);
+                Array.Resize(ref cars, cars.Length + 1);
                 cars[i] = new Car();
                 cars[i].maxSpeed = int.Parse(dataGridView1.Rows[i].Cells["maxSpeed"].Value.ToString());
-                cars[i].weight = float.Parse(dataGridView1.Rows[i].Cells["weight"].Value.ToString());
+                cars[i].weight = int.Parse(dataGridView1.Rows[i].Cells["weight"].Value.ToString());
                 cars[i].isDamage = bool.Parse(dataGridView1.Rows[i].Cells["isDamage"].Value.ToString());
                 cars[i].color = dataGridView1.Rows[i].Cells["color"].Value.ToString();
-                cars[i].sits = int.Parse(dataGridView1.Rows[i].Cells["sits"].Value.ToString());
+                cars[i].price = int.Parse(dataGridView1.Rows[i].Cells["sits"].Value.ToString());
             }
         }
 
@@ -120,15 +120,15 @@ namespace Car
             DateTime startTime = DateTime.Now;
             while (step > 0)
             {
-                for (int i = 0; i < (cars.Length - step); i++) 
+                for (int i = 0; i < (cars.Length - step); i++)
                 {
                     j = i;
-                    while ((j >= 0) && (cars[j].maxSpeed > cars[j+step].maxSpeed))
+                    while ((j >= 0) && (cars[j].maxSpeed > cars[j + step].maxSpeed))
                     {
                         Car c = new Car();
                         c = cars[j];
-                        cars[j] = cars[j+step];
-                        cars[j+step] = c;
+                        cars[j] = cars[j + step];
+                        cars[j + step] = c;
                         j -= step;
                     }
                 }
@@ -188,6 +188,76 @@ namespace Car
         {
             dataGridView1.DataSource = null;
             dataGridView1.Rows.Clear();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            int weight_cost = int.Parse(textBox6.Text);
+            int r = 0;
+            int r_max = 0;
+            int count = cars.Length;
+            int sum_max = 0;
+            int weight_max = 0;
+            DateTime startTime = DateTime.Now;
+
+            while (r < Math.Pow(2, count))
+            {
+                string bit = Convert.ToString(r, 2);
+                int sum = 0;
+                int weight = 0;
+
+                for (int i = 0; i < bit.Length; i++)
+                {
+                    if (bit[i] == '1')
+                    {
+                        weight += cars[i].weight;
+                        sum += cars[i].price;
+                    }
+                }
+
+                if (weight <= weight_cost && sum_max < sum)
+                {
+                    sum_max = sum;
+                    weight_max = weight;
+                    r_max = r;
+                }
+                r++;
+            }
+            System.TimeSpan time = DateTime.Now - startTime;
+            label6.Text = time.ToString();
+
+            richTextBox1.AppendText(Convert.ToString(r_max, 2));
+            richTextBox1.AppendText("\n" + sum_max.ToString());
+            richTextBox1.AppendText("\n" + weight_max.ToString());
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            int maxWeight = int.Parse(textBox6.Text);
+            int[,] bp = new int[cars.Length+1, maxWeight+1];
+            DateTime startTime = DateTime.Now;
+
+            for (int i = 0; i < cars.Length+1; i++)
+            {
+                for(int j = 0; j < maxWeight+1; j++)
+                {
+                    if (i == 0 || j == 0)
+                    {
+                        bp[i, j] = 0;
+                    }
+                    else if (cars[i-1].weight <= j)
+                    {
+                        bp[i, j] = Math.Max(cars[i-1].price + bp[i-1, j - cars[i-1].weight], bp[i-1, j]);
+                    }
+                    else 
+                    { 
+                        bp[i, j] = bp[i-1, j]; 
+                    }
+                }
+            }
+            System.TimeSpan time = DateTime.Now - startTime;
+            label6.Text = time.ToString();
+            richTextBox1.AppendText("\n" + bp[cars.Length, maxWeight]);
         }
     }
 }

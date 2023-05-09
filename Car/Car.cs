@@ -9,9 +9,9 @@ namespace Car
      public class Car
     {
         public int maxSpeed { get; set; }
-        public float weight { get; set; }
+        public int weight { get; set; }
         public bool isDamage { get; set; }
         public string color { get; set; }
-        public int sits { get; set; }
+        public int price { get; set; }
     }
 }

@@ -28,292 +28,338 @@ namespace Car
         /// </summary>
         private void InitializeComponent()
         {
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.maxSpeed = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.weight = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isDamage = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.color = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sits = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.resetButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.SuspendLayout();
+            checkBox1 = new CheckBox();
+            label1 = new Label();
+            label2 = new Label();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
+            label3 = new Label();
+            textBox3 = new TextBox();
+            label4 = new Label();
+            textBox4 = new TextBox();
+            label5 = new Label();
+            button1 = new Button();
+            dataGridView1 = new DataGridView();
+            maxSpeed = new DataGridViewTextBoxColumn();
+            weight = new DataGridViewTextBoxColumn();
+            isDamage = new DataGridViewCheckBoxColumn();
+            color = new DataGridViewTextBoxColumn();
+            sits = new DataGridViewTextBoxColumn();
+            button2 = new Button();
+            button3 = new Button();
+            button4 = new Button();
+            label6 = new Label();
+            label7 = new Label();
+            button5 = new Button();
+            button6 = new Button();
+            button7 = new Button();
+            resetButton = new Button();
+            button8 = new Button();
+            richTextBox1 = new RichTextBox();
+            button9 = new Button();
+            textBox5 = new TextBox();
+            textBox6 = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            SuspendLayout();
             // 
             // checkBox1
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(109, 69);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(40, 19);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Да";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(109, 69);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(40, 19);
+            checkBox1.TabIndex = 0;
+            checkBox1.Text = "Да";
+            checkBox1.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Макс. скорость";
+            label1.AutoSize = true;
+            label1.Location = new Point(11, 14);
+            label1.Name = "label1";
+            label1.Size = new Size(92, 15);
+            label1.TabIndex = 1;
+            label1.Text = "Макс. скорость";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 70);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 15);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Повреждена ?";
+            label2.AutoSize = true;
+            label2.Location = new Point(11, 70);
+            label2.Name = "label2";
+            label2.Size = new Size(84, 15);
+            label2.TabIndex = 2;
+            label2.Text = "Повреждена ?";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(109, 11);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            textBox1.Location = new Point(109, 11);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(100, 23);
+            textBox1.TabIndex = 3;
+            textBox1.KeyPress += textBox1_KeyPress;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(109, 40);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 23);
-            this.textBox2.TabIndex = 5;
-            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
+            textBox2.Location = new Point(109, 40);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(100, 23);
+            textBox2.TabIndex = 5;
+            textBox2.KeyPress += textBox2_KeyPress;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 43);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 15);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Вес машины";
+            label3.AutoSize = true;
+            label3.Location = new Point(11, 43);
+            label3.Name = "label3";
+            label3.Size = new Size(78, 15);
+            label3.TabIndex = 4;
+            label3.Text = "Вес машины";
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(109, 123);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 23);
-            this.textBox3.TabIndex = 9;
-            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            textBox3.Location = new Point(109, 123);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(100, 23);
+            textBox3.TabIndex = 9;
+            textBox3.KeyPress += textBox1_KeyPress;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 126);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 15);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Кол-во мест";
+            label4.AutoSize = true;
+            label4.Location = new Point(11, 126);
+            label4.Name = "label4";
+            label4.Size = new Size(75, 15);
+            label4.TabIndex = 8;
+            label4.Text = "Кол-во мест";
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(109, 94);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 23);
-            this.textBox4.TabIndex = 7;
+            textBox4.Location = new Point(109, 94);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(100, 23);
+            textBox4.TabIndex = 7;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 97);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 15);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Цвет машины";
+            label5.AutoSize = true;
+            label5.Location = new Point(11, 97);
+            label5.Name = "label5";
+            label5.Size = new Size(85, 15);
+            label5.TabIndex = 6;
+            label5.Text = "Цвет машины";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(48, 168);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 51);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Добавить";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            button1.Location = new Point(48, 168);
+            button1.Name = "button1";
+            button1.Size = new Size(129, 51);
+            button1.TabIndex = 10;
+            button1.Text = "Добавить";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.maxSpeed,
-            this.weight,
-            this.isDamage,
-            this.color,
-            this.sits});
-            this.dataGridView1.Location = new System.Drawing.Point(233, 69);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(543, 150);
-            this.dataGridView1.TabIndex = 11;
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { maxSpeed, weight, isDamage, color, sits });
+            dataGridView1.Location = new Point(233, 69);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(543, 150);
+            dataGridView1.TabIndex = 11;
             // 
             // maxSpeed
             // 
-            this.maxSpeed.HeaderText = "Макс. скорость";
-            this.maxSpeed.Name = "maxSpeed";
+            maxSpeed.HeaderText = "Макс. скорость";
+            maxSpeed.Name = "maxSpeed";
             // 
             // weight
             // 
-            this.weight.HeaderText = "Вес машины";
-            this.weight.Name = "weight";
+            weight.HeaderText = "Вес машины";
+            weight.Name = "weight";
             // 
             // isDamage
             // 
-            this.isDamage.HeaderText = "Повреждена ?";
-            this.isDamage.Name = "isDamage";
+            isDamage.HeaderText = "Повреждена ?";
+            isDamage.Name = "isDamage";
             // 
             // color
             // 
-            this.color.HeaderText = "Цвет машины";
-            this.color.Name = "color";
+            color.HeaderText = "Цвет машины";
+            color.Name = "color";
             // 
             // sits
             // 
-            this.sits.HeaderText = "Кол-во мест";
-            this.sits.Name = "sits";
+            sits.HeaderText = "Кол-во мест";
+            sits.Name = "sits";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(310, 7);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(129, 51);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Сохранить";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            button2.Location = new Point(310, 7);
+            button2.Name = "button2";
+            button2.Size = new Size(129, 51);
+            button2.TabIndex = 12;
+            button2.Text = "Сохранить";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(582, 7);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(129, 51);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "Обновить";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            button3.Location = new Point(582, 7);
+            button3.Name = "button3";
+            button3.Size = new Size(129, 51);
+            button3.TabIndex = 13;
+            button3.Text = "Обновить";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(248, 239);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(129, 51);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "Бабл";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            button4.Location = new Point(248, 239);
+            button4.Name = "button4";
+            button4.Size = new Size(129, 51);
+            button4.TabIndex = 14;
+            button4.Text = "Бабл";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(133, 368);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(15, 15);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "=";
+            label6.AutoSize = true;
+            label6.Location = new Point(133, 368);
+            label6.Name = "label6";
+            label6.Size = new Size(15, 15);
+            label6.TabIndex = 15;
+            label6.Text = "=";
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(11, 368);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(116, 15);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "Время сортировки: ";
+            label7.AutoSize = true;
+            label7.Location = new Point(11, 368);
+            label7.Name = "label7";
+            label7.Size = new Size(116, 15);
+            label7.TabIndex = 16;
+            label7.Text = "Время сортировки: ";
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(11, 314);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(129, 51);
-            this.button5.TabIndex = 17;
-            this.button5.Text = "Заполнение";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            button5.Location = new Point(11, 314);
+            button5.Name = "button5";
+            button5.Size = new Size(129, 51);
+            button5.TabIndex = 17;
+            button5.Text = "Заполнение";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(431, 239);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(129, 51);
-            this.button6.TabIndex = 18;
-            this.button6.Text = "Метод Шелла";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            button6.Location = new Point(431, 239);
+            button6.Name = "button6";
+            button6.Size = new Size(129, 51);
+            button6.TabIndex = 18;
+            button6.Text = "Метод Шелла";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(618, 239);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(129, 51);
-            this.button7.TabIndex = 19;
-            this.button7.Text = "Патимейкер";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            button7.Location = new Point(618, 239);
+            button7.Name = "button7";
+            button7.Size = new Size(129, 51);
+            button7.TabIndex = 19;
+            button7.Text = "Патимейкер";
+            button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // resetButton
             // 
-            this.resetButton.Location = new System.Drawing.Point(660, 314);
-            this.resetButton.Name = "resetButton";
-            this.resetButton.Size = new System.Drawing.Size(129, 51);
-            this.resetButton.TabIndex = 20;
-            this.resetButton.Text = "Сброс";
-            this.resetButton.UseVisualStyleBackColor = true;
-            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
+            resetButton.Location = new Point(647, 314);
+            resetButton.Name = "resetButton";
+            resetButton.Size = new Size(129, 51);
+            resetButton.TabIndex = 20;
+            resetButton.Text = "Сброс";
+            resetButton.UseVisualStyleBackColor = true;
+            resetButton.Click += resetButton_Click;
+            // 
+            // button8
+            // 
+            button8.Location = new Point(796, 11);
+            button8.Name = "button8";
+            button8.Size = new Size(129, 51);
+            button8.TabIndex = 21;
+            button8.Text = "Перебор";
+            button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
+            // 
+            // richTextBox1
+            // 
+            richTextBox1.Location = new Point(796, 113);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(297, 239);
+            richTextBox1.TabIndex = 22;
+            richTextBox1.Text = "";
+            // 
+            // button9
+            // 
+            button9.Location = new Point(943, 11);
+            button9.Name = "button9";
+            button9.Size = new Size(129, 51);
+            button9.TabIndex = 23;
+            button9.Text = "Динамика";
+            button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click;
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(27, 285);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(100, 23);
+            textBox5.TabIndex = 24;
+            // 
+            // textBox6
+            // 
+            textBox6.Location = new Point(890, 84);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(100, 23);
+            textBox6.TabIndex = 25;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(801, 386);
-            this.Controls.Add(this.resetButton);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.checkBox1);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1128, 389);
+            Controls.Add(textBox6);
+            Controls.Add(textBox5);
+            Controls.Add(button9);
+            Controls.Add(richTextBox1);
+            Controls.Add(button8);
+            Controls.Add(resetButton);
+            Controls.Add(button7);
+            Controls.Add(button6);
+            Controls.Add(button5);
+            Controls.Add(label7);
+            Controls.Add(label6);
+            Controls.Add(button4);
+            Controls.Add(button3);
+            Controls.Add(button2);
+            Controls.Add(dataGridView1);
+            Controls.Add(button1);
+            Controls.Add(textBox3);
+            Controls.Add(label4);
+            Controls.Add(textBox4);
+            Controls.Add(label5);
+            Controls.Add(textBox2);
+            Controls.Add(label3);
+            Controls.Add(textBox1);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(checkBox1);
+            Name = "Form1";
+            Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -344,5 +390,10 @@ namespace Car
         private Button button6;
         private Button button7;
         private Button resetButton;
+        private Button button8;
+        private RichTextBox richTextBox1;
+        private Button button9;
+        private TextBox textBox5;
+        private TextBox textBox6;
     }
 }
