@@ -98,7 +98,7 @@ namespace Car
             Random rnd = new Random();
             for (int i = 0; i < int.Parse(textBox5.Text); i++)
             {
-                dataGridView1.Rows.Add(rnd.Next(300), rnd.Next(10), true, "jj", rnd.Next(10));
+                dataGridView1.Rows.Add(i+1, rnd.Next(1,10), true, "jj", rnd.Next(1,10));
             }
             Array.Resize(ref cars, 0);
             for (int i = 0; i < dataGridView1.RowCount; i++)
@@ -227,19 +227,19 @@ namespace Car
             label6.Text = time.ToString();
 
             richTextBox1.AppendText(Convert.ToString(r_max, 2));
-            richTextBox1.AppendText("\n" + sum_max.ToString());
-            richTextBox1.AppendText("\n" + weight_max.ToString());
+            richTextBox1.AppendText("\n Сумма = " + sum_max.ToString());
+            richTextBox1.AppendText("\n Вес = " + weight_max.ToString());
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            int maxWeight = int.Parse(textBox6.Text);
-            int[,] bp = new int[cars.Length+1, maxWeight+1];
+            int capacity = int.Parse(textBox6.Text);
+            int[,] bp = new int[cars.Length+1, capacity + 1];
             DateTime startTime = DateTime.Now;
 
             for (int i = 0; i < cars.Length+1; i++)
             {
-                for(int j = 0; j < maxWeight+1; j++)
+                for(int j = 0; j < capacity+1; j++)
                 {
                     if (i == 0 || j == 0)
                     {
@@ -257,7 +257,24 @@ namespace Car
             }
             System.TimeSpan time = DateTime.Now - startTime;
             label6.Text = time.ToString();
-            richTextBox1.AppendText("\n" + bp[cars.Length, maxWeight]);
+
+            string items = "";
+            int currentItem = cars.Length;
+            int currentCapacity = capacity;
+            int maxWeight = 0;
+
+            while (currentItem > 0 && currentCapacity > 0)
+            {
+                if (bp[currentItem, currentCapacity] != bp[currentItem - 1, currentCapacity])
+                {
+                    items += cars[currentItem - 1].maxSpeed + " ";
+                    maxWeight += cars[currentItem - 1].weight;
+                    currentCapacity -= cars[currentItem - 1].weight;
+                }
+                currentItem--;
+            }
+            int maxSumma = bp[cars.Length, maxWeight];
+            richTextBox1.AppendText("\nПредметы:\n" + items + "Сумма = " + maxSumma.ToString() + "\nВес = " + maxWeight);
         }
     }
 }
